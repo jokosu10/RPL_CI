@@ -1,0 +1,42 @@
+<div class="box">
+    <div class="box-header">
+       <h3 class="box-title">Laporan Kerusakan Bulanan</h3>
+    </div><!-- /.box-header -->
+    <div class="box-body table-responsive">
+        <table id="example1" class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>Nama Laboratorium</th>
+                    <th>No Meja</th>
+                    <th>Keterangan Kerusakan</th>
+                    <th>Tgl Kerusakan</th>
+                    <th>Keterangan Perbaikan</th>
+                    <th>Tgl Perbaikan</th>
+                </tr>
+            </thead>
+            <tbody>
+            <?php 
+                    $no = 1;
+                    if(!empty($detail_kerusakan)){
+                        foreach ($detail_kerusakan as $detail) { 
+                            if($detail->ID_Meja == $row["ID_meja"]){
+                    ?>
+                    <tr>
+                        <th><?php echo $no++ ?></th>
+                        <th><?php echo $detail->Keterangan_Kerusakan; ?></th>
+                        <th><?php echo $detail->Keterangan_Kerusakan; ?></th>
+                        <th><?php echo $detail->Tgl_Kerusakan; ?></th>
+                        <th><?php echo $detail->Keterangan_Perbaikan; ?></th>
+                        <th><?php echo $detail->Tgl_Selesai; ?></th>
+                    </tr>
+
+                        <?php }
+                            }
+
+                    }
+                ?>
+            </tbody>
+        </table>
+    </div><!-- /.box-body -->
+</div><!-- /.box -->
